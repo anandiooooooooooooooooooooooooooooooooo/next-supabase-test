@@ -138,45 +138,6 @@ export default function Page() {
       </div>
 
 
-      {/* Sample Cards Section */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 mt-10 max-w-7xl mx-auto">
-        {sampleCards.map((card) => (
-          <div key={card.id} className="group cursor-pointer">
-            <div className="relative rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-300">
-              <img src={`https://placehold.co/400x300/e0e0e0/333?text=Project`} alt={card.title} className="w-full aspect-[4/3] object-cover" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4 flex flex-col justify-end">
-                <p className="text-white font-bold text-lg truncate">{card.title}</p>
-              </div>
-            </div>
-            <div className="flex items-center justify-between mt-3 px-1">
-              <div className="flex items-center gap-2">
-                <Avatar className="w-7 h-7">
-                  <AvatarImage src={card.avatar} alt={card.designer} />
-                  <AvatarFallback>{card.designer.charAt(0)}</AvatarFallback>
-                </Avatar>
-                <span className="font-medium text-sm">{card.designer}</span>
-              </div>
-              <div className="flex items-center gap-3 text-gray-500">
-                <div className="flex items-center gap-1">
-                  <Heart className="w-4 h-4 hover:text-pink-500" />
-                  <span className="text-xs font-medium">{card.likes}</span>
-                </div>
-                <div className="flex items-center gap-1">
-                  <Eye className="w-4 h-4" />
-                  <span className="text-xs font-medium">{card.views}</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-
-      {/* Load More Button */}
-      <div className="text-center mt-16">
-        <Button size="lg" className="rounded-full px-8 py-6 bg-pink-500 hover:bg-pink-600 text-white font-bold shadow-lg hover:shadow-xl transition-all">
-          Load more work
-        </Button>
-      </div>
 
     </main>
   );
