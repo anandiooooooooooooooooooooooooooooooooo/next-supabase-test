@@ -137,7 +137,19 @@ export default function Page() {
         </Button>
       </div>
 
-      teasdjikasbhdiasbdjikasjkdbajkb asjdaskjdnakdjanakdjankdansjnd
+      <div className="mt-20 border-b border-gray-200 max-w-7xl mx-auto flex items-center justify-between">
+        <Tabs defaultValue="popular" className="">
+          <TabsList className="bg-transparent p-0">
+            <TabsTrigger value="popular" className="pb-4 px-1 text-base">Popular</TabsTrigger>
+            <TabsTrigger value="new" className="pb-4 px-1 text-base">New & Noteworthy</TabsTrigger>
+            <TabsTrigger value="following" className="pb-4 px-1 text-base">Following</TabsTrigger>
+          </TabsList>
+        </Tabs>
+
+        <Button variant="outline" className="flex items-center gap-2 border-gray-300 hover:bg-gray-100">
+          Filters <ChevronDown className="w-4 h-4 text-gray-500" />
+        </Button>
+      </div>
     </main>
   );
 }
