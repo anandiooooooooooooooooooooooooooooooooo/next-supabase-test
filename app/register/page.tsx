@@ -1,8 +1,11 @@
 "use client";
 
-import { supabase } from "@/lib/supabase";
+import { createClient } from "@/lib/supabase/client";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import "../../styles/globals.css";
+
+const supabase = createClient();
 
 export default function RegisterPage() {
   const router = useRouter();
@@ -16,12 +19,16 @@ export default function RegisterPage() {
     setLoading(true);
     setError(null);
 
-    const { error } = await supabase.auth.signUp({ email, password });
+    const { error } = await supabase.auth.signUp({
+      email,
+      password,
+    });
 
     if (error) {
       setError(error.message);
     } else {
-      router.push("/dashboard"); // or redirect to login
+      // Redirect to a confirmation page
+      router.push("/confirm-email");
     }
 
     setLoading(false);
@@ -31,43 +38,83 @@ export default function RegisterPage() {
     <div className="min-h-screen flex items-center justify-center bg-gray-100 px-4">
       <form
         onSubmit={handleRegister}
-        className="bg-white shadow-md rounded-lg p-8 w-full max-w-md space-y-4"
+        style={{
+          width: "100%",
+          maxWidth: "400px",
+          background: "#fff",
+          padding: "20px",
+          borderRadius: "8px",
+          boxShadow: "0 2px 10px rgba(0,0,0,0.1)",
+        }}
       >
-        <h1 className="text-2xl font-bold text-center text-orange-500">
+        <h1
+          style={{ fontSize: "20px", fontWeight: "bold", marginBottom: "16px" }}
+        >
           Daftar Akun
         </h1>
 
-        <input
-          type="email"
-          placeholder="Email"
-          value={email}
-          required
-          onChange={(e) => setEmail(e.target.value)}
-          className="w-full border px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-400"
-        />
+        <div style={{ marginBottom: "10px" }}>
+          <label>Email:</label>
+          <input
+            type="email"
+            value={email}
+            required
+            onChange={(e) => setEmail(e.target.value)}
+            style={{
+              display: "block",
+              width: "100%",
+              padding: "8px",
+              marginTop: "4px",
+              border: "1px solid #ccc",
+              borderRadius: "4px",
+            }}
+          />
+        </div>
 
-        <input
-          type="password"
-          placeholder="Password"
-          value={password}
-          required
-          onChange={(e) => setPassword(e.target.value)}
-          className="w-full border px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-400"
-        />
+        <div style={{ marginBottom: "10px" }}>
+          <label>Password:</label>
+          <input
+            type="password"
+            value={password}
+            required
+            onChange={(e) => setPassword(e.target.value)}
+            style={{
+              display: "block",
+              width: "100%",
+              padding: "8px",
+              marginTop: "4px",
+              border: "1px solid #ccc",
+              borderRadius: "4px",
+            }}
+          />
+        </div>
 
-        {error && <p className="text-red-500 text-sm">{error}</p>}
+        {error && (
+          <p style={{ color: "red", fontSize: "14px", marginTop: "8px" }}>
+            {error}
+          </p>
+        )}
 
         <button
           type="submit"
           disabled={loading}
-          className="bg-orange-500 hover:bg-orange-600 text-white w-full py-2 rounded-md transition"
+          style={{
+            width: "100%",
+            padding: "10px",
+            backgroundColor: "#f97316",
+            color: "white",
+            border: "none",
+            borderRadius: "4px",
+            cursor: loading ? "not-allowed" : "pointer",
+            marginTop: "10px",
+          }}
         >
           {loading ? "Mendaftarkan..." : "Daftar"}
         </button>
 
-        <p className="text-center text-sm text-gray-500">
+        <p style={{ fontSize: "14px", marginTop: "16px", textAlign: "center" }}>
           Sudah punya akun?{" "}
-          <a href="/login" className="text-orange-500 hover:underline">
+          <a href="/login" style={{ color: "#f97316" }}>
             Login di sini
           </a>
         </p>
