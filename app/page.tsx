@@ -1,4 +1,5 @@
-// app/page.tsx
+"use client";
+import Link from "next/link";
 
 export default function HomePage() {
   return (
@@ -11,18 +12,18 @@ export default function HomePage() {
         karir berdasarkan minat, usia, dan lokasi.
       </p>
       <div className="space-x-4">
-        <a
+        <Link
           href="/register"
           className="bg-orange-500 text-white px-6 py-3 rounded-xl hover:bg-orange-600 transition"
         >
           Mulai Sekarang
-        </a>
-        <a
+        </Link>
+        <Link
           href="/login"
           className="text-orange-500 hover:underline font-semibold"
         >
           Sudah punya akun?
-        </a>
+        </Link>
       </div>
     </section>
   );
