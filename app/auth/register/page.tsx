@@ -1,9 +1,9 @@
 "use client";
 
 import { createClient } from "@/lib/supabase/client";
+import "@/styles/globals.css";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import "../../styles/globals.css";
 
 const supabase = createClient();
 
@@ -114,7 +114,7 @@ export default function RegisterPage() {
 
         <p style={{ fontSize: "14px", marginTop: "16px", textAlign: "center" }}>
           Sudah punya akun?{" "}
-          <a href="/login" style={{ color: "#f97316" }}>
+          <a href="/auth/login" style={{ color: "#f97316" }}>
             Login di sini
           </a>
         </p>
