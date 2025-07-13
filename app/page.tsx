@@ -13,13 +13,13 @@ export default function HomePage() {
       </p>
       <div className="space-x-4">
         <Link
-          href="/register"
+          href="/auth/register"
           className="bg-orange-500 text-white px-6 py-3 rounded-xl hover:bg-orange-600 transition"
         >
           Mulai Sekarang
         </Link>
         <Link
-          href="/login"
+          href="/auth/login"
           className="text-orange-500 hover:underline font-semibold"
         >
           Sudah punya akun?

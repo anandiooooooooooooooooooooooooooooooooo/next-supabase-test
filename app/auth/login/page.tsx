@@ -75,6 +75,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { createClient } from "@/lib/supabase/client";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
@@ -148,9 +149,12 @@ export default function LoginPage() {
             </Button>
             <p className="text-sm text-center text-gray-500">
               Belum punya akun?{" "}
-              <a href="/register" className="text-orange-500 hover:underline">
+              <Link
+                href="/auth/register"
+                className="text-orange-500 hover:underline"
+              >
                 Daftar sekarang
-              </a>
+              </Link>
             </p>
           </CardFooter>
         </form>
