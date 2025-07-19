@@ -1,4 +1,5 @@
 "use client";
+import { Card, CardAction, CardHeader, CardTitle } from "@/components/ui/card";
 import Link from "next/link";
 
 export default function HomePage() {
@@ -24,6 +25,18 @@ export default function HomePage() {
         >
           Sudah punya akun?
         </Link>
+      </div>
+      <div className="flex space-x-4  > *">
+        <div className="flex items-center">
+          <p>Learn anytime, <br/> anywhere with our <br/> online courses</p>
+        </div>
+        <div className="space-y-4 justify-center">
+          <div className="bg-[#E0F15E] rounded-xl"><p>icikiwir<br/>makan kebab</p></div>
+          <div className="bg-[#B09EEF] rounded-xl"><p>Lblabla, <br/> anywhere with our <br/> online courses</p></div>
+        </div>
+        <div className="flex items-center">
+          <p>Belajar dimana aja, <br/> anywhere with our <br/> online courses</p>
+        </div>
       </div>
     </section>
   );

@@ -15,7 +15,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <html lang="id">
       <body className={inter.className + " bg-gray-50 text-gray-900"}>
         <Navbar />
-        <main className="max-w-5xl mx-auto p-4">{children}</main>
+        <main className="max-w-7xl mx-auto p-4">{children}</main>
       </body>
     </html>
   );
