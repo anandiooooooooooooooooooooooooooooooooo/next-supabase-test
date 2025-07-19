@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import CardKotak from "@/components/ui/cardKotak";
 
 export default function HomePage() {
   return (
@@ -26,7 +27,7 @@ export default function HomePage() {
         </Link>
       </div>
       <div className="flex gap-4">
-        <div className="flex items-center">
+        <div className="flex items-center bg-blue-300 rounded-xl">
           <p>
             Learn anytime, <br /> anywhere with our <br /> online courses
           </p>
@@ -39,18 +40,48 @@ export default function HomePage() {
               makan kebab
             </p>
           </div>
-          <div className="bg-[#B09EEF] rounded-xl w-full">
+          <div className="bg-[#B09EEF] rounded-xl w-full ">
             <p>
               Lblabla, <br /> anywhere with our <br /> online courses
             </p>
           </div>
         </div>
-        <div className="flex items-center">
+        <div className="flex items-center bg-indigo-300 rounded-xl">
           <p>
             Belajar dimana aja, <br /> anywhere with our <br /> online courses
           </p>
         </div>
       </div>
+
+      <section className="flex items-center justify-center text-center py-20 gap-20">
+        <h1 className="text-4xl md:text-5xl font-extrabold text-orange-500">
+        Kembangkan<br/>Kemampuan
+      </h1>
+      <p className="text-4xl md:text-base max-w-xl text-gray-600 text-left ">
+        Temukan potensi dan rancang masa depanmu. <br/>Jelajahi jalur pendidikan dan
+        karir berdasarkan<br/> minat, usia, dan lokasi.
+      </p>
+      <Link
+          href="/auth/register"
+          className="bg-orange-500 text-white px-6 py-3 rounded-xl hover:bg-orange-600 transition"
+        >
+          Gabung Sekarang
+        </Link>
+      </section>
+    <div className="flex gap-4">
+    <CardKotak title="Crotical Thinking"></CardKotak> <CardKotak title="Crotical Thinking"></CardKotak>
+    <CardKotak title="Crotical Thinking"></CardKotak> <CardKotak title="Crotical Thinking"></CardKotak>
+    <CardKotak title="Crotical Thinking"></CardKotak> <CardKotak title="Crotical Thinking"></CardKotak>
+    </div>
+    <div className="flex gap-4">
+    <CardKotak title="Crotical Thinking"></CardKotak> <CardKotak title="Crotical Thinking"></CardKotak>
+    <CardKotak title="Crotical Thinking"></CardKotak> <CardKotak title="Crotical Thinking"></CardKotak>
+    </div>
+    <div className="flex gap-4">
+      <CardKotak title="Crotical Thinking"></CardKotak> <CardKotak title="Crotical Thinking"></CardKotak>
+    </div>
     </section>
+
+    
   );
 }
