@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Button } from "./ui/button";
 
 const Navbar = () => {
@@ -10,9 +11,11 @@ const Navbar = () => {
         <Button variant={"link"}>Menu 3</Button>
       </div>
       <div className="bg-black text-white px-3 rounded-2xl">
-        <Button>
-          <b>Login</b>
-        </Button>
+        <Link href="/auth/login">
+          <Button>
+            <b>Login</b>
+          </Button>
+        </Link>
       </div>
     </div>
   );
