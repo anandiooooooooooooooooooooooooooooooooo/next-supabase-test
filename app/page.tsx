@@ -1,6 +1,10 @@
 "use client";
 import Link from "next/link";
-import CardKotak from "@/components/ui/cardKotak";
+import CardKotak from "@/components/custom/cardKotak";
+import CardGlossy from "@/components/custom/cardGlosy";
+import CardContain from "@/components/custom/CardContain";
+import Image from "next/image";
+
 
 export default function HomePage() {
   return (
@@ -80,6 +84,18 @@ export default function HomePage() {
     <div className="flex gap-4">
       <CardKotak title="Crotical Thinking"></CardKotak> <CardKotak title="Crotical Thinking"></CardKotak>
     </div>
+
+    <div className="flex items-center justify-center text-center py-20 ">
+    <h1 className="text-4xl md:text-5xl font-extrabold text-orange-500">Testimoni & Aspirasi lokal</h1>
+    </div>
+    <section className="flex items-center justify-center text-center gap-20">
+      
+      <div className="flex gap-10">
+        <CardContain name="Mas Varis" image="/Images/jidan.png" quote='"blblableble blublublu blblableble blublublu blblableble blublublu blblableble blublublu blblableble blublublu "'></CardContain>
+        <CardContain name="Mas Varis" image="/Images/jidan.png" quote='"blblableble blublublu blblableble blublublu blblableble blublublu blblableble blublublu blblableble blublublu "'></CardContain>
+        <CardContain name="Mas Varis" image="/Images/jidan.png" quote='"blblableble blublublu blblableble blublublu blblableble blublublu blblableble blublublu blblableble blublublu "'></CardContain>
+      </div>
+    </section>
     </section>
 
     

@@ -2,7 +2,7 @@ import { Button } from "./ui/button";
 
 const Navbar = () => {
   return (
-    <div className="flex justify-between items-center p-2 px-5 bg-green-300">
+    <div className="flex justify-between items-center p-2 px-5 bg-[#DADADA]">
       <span className="flex items-center">Jamim</span>
       <div>
         <Button variant={"link"}>Menu 1</Button>

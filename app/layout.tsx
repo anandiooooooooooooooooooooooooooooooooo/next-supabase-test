@@ -1,4 +1,5 @@
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer"
 import { Inter } from "next/font/google";
 import { ReactNode } from "react";
 import "../styles/globals.css";
@@ -16,6 +17,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       <body className={inter.className + " bg-gray-50 text-gray-900"}>
         <Navbar />
         <main className="max-w-7xl mx-auto p-4">{children}</main>
+        <Footer />
       </body>
     </html>
   );
