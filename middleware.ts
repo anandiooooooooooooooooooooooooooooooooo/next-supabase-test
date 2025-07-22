@@ -22,15 +22,20 @@ export async function middleware(request: NextRequest) {
     }
   );
 
-  const { data, error } = await supabase.auth.getUser();
-
-  if (error) {
-    console.error("Supabase auth error:", error.message);
+  let user = null;
+  try {
+    const { data, error } = await supabase.auth.getUser();
+    if (error) {
+      console.error("Supabase auth error:", error.message);
+    }
+    user = data.user;
+  } catch (err) {
+    console.error("Unexpected middleware error:", err);
   }
 
   const isRootPath = request.nextUrl.pathname === "/";
 
-  if (data.user && isRootPath) {
+  if (user && isRootPath) {
     const dashboardUrl = request.nextUrl.clone();
     dashboardUrl.pathname = "/dashboard";
     return NextResponse.redirect(dashboardUrl);
@@ -38,3 +43,7 @@ export async function middleware(request: NextRequest) {
 
   return response;
 }
+
+export const config = {
+  matcher: ["/"], // only runs for the homepage
+};

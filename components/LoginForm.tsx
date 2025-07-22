@@ -40,7 +40,7 @@ export function LoginForm({ className }: React.ComponentProps<"div">) {
       setError(data.error || "Login failed.");
     } else {
       // If login is successful, redirect to the dashboard.
-      router.push("/dashboard");
+      router.push("/pages/dashboard");
       router.refresh(); // Refresh to ensure the server knows about the new session.
     }
     setIsLoading(false);

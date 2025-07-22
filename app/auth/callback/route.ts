@@ -25,7 +25,7 @@ export async function GET(request: Request) {
     if (!error) {
       // 5. If the exchange is successful, the user is now officially logged in.
       // Redirect them from this backend route to a user-facing page, like their dashboard.
-      return NextResponse.redirect(`${origin}/dashboard`)
+      return NextResponse.redirect(`${origin}/pages/dashboard`)
     }
   }
 
