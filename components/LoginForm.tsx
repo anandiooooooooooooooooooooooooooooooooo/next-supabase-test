@@ -86,7 +86,7 @@ export function LoginForm({ className }: React.ComponentProps<"div">) {
                     <Input
                       id="email"
                       type="email"
-                      placeholder="m@example.com"
+                      placeholder="Email"
                       required
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
@@ -104,11 +104,12 @@ export function LoginForm({ className }: React.ComponentProps<"div">) {
                     <Input
                       id="password"
                       type="password"
+                      placeholder="Password"
                       required
                       value={password}
                       onChange={(e) => setPassword(e.target.value)}
                       disabled={isLoading}
-                      className="focus-accent-ring border-stone-300 bg-[#FEFEFE] pl-10 text-stone-800 focus:ring-2"
+                      className="focus-accent-ring border-stone-300 bg-[#FEFEFE] pl-10 text-stone-800 placeholder:text-stone-400 focus:ring-2"
                     />
                   </div>
                 </div>
@@ -148,8 +149,8 @@ export function LoginForm({ className }: React.ComponentProps<"div">) {
             <div className="relative z-10 text-white">
               <Quote className="mb-4 size-10 fill-white/80 text-white/80" />
               <blockquote className="text-xl font-semibold">
-                "Masa depan adalah milik mereka yang percaya pada keindahan
-                mimpi mereka."
+                &quot;Masa depan adalah milik mereka yang percaya pada keindahan
+                mimpi mereka.&quot;
               </blockquote>
               <footer className="mt-2 text-sm text-white/80">
                 - Eleanor Roosevelt

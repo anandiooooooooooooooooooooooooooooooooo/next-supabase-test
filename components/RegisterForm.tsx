@@ -182,8 +182,8 @@ export function RegisterForm({ className }: React.ComponentProps<"div">) {
             <div className="relative z-10 text-white">
               <Quote className="mb-4 size-10 fill-white/80 text-white/80" />
               <blockquote className="text-xl font-semibold">
-                "Masa depan adalah milik mereka yang percaya pada keindahan
-                mimpi mereka."
+                &quot;Masa depan adalah milik mereka yang percaya pada keindahan
+                mimpi mereka.&quot;
               </blockquote>
               <footer className="mt-2 text-sm text-white/80">
                 - Eleanor Roosevelt
